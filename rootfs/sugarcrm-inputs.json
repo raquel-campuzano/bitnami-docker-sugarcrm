@@ -1,0 +1,16 @@
+{
+  "username": "{{$global.env.SUGARCRM_USER_NAME}}",
+  "lastName": "{{$global.env.SUGARCRM_LAST_NAME}}",
+  "password": "{{$global.env.SUGARCRM_PASSWORD}}",
+  "email": "{{$global.env.SUGARCRM_EMAIL}}",
+  "host": "{{$global.env.SUGARCRM_HOST}}",
+  "smtpHost": "{{$global.env.SUGARCRM_MTP_HOST}}",
+  "smtpPort": "{{$global.env.SUGARCRM_SMTP_PORT}}",
+  "smtpUser": "{{$global.env.SUGARCRM_SMTP_USER}}",
+  "smtpPassword": "{{$global.env.SUGARCRM_SMTP_PASSWORD}}",
+  "smtpProtocol": "{{$global.env.SUGARCRM_SMTP_PROTOCOL}}",
+  "databaseAdminUser": "{{$global.env.MARIADB_USER}}",
+  "databaseAdminPassword": "{{$global.env.MARIADB_PASSWORD}}",
+  "databaseServerHost": "{{$global.env.MARIADB_HOST}}",
+  "databaseServerPort": "{{$global.env.MARIADB_PORT}}"
+}
