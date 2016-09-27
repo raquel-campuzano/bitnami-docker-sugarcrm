@@ -193,11 +193,11 @@ Available variables:
 
 To configure SugarCMR to send email using SMTP you can set the following environment variables:
 
- - `SMTP_HOST`: SMTP host.
- - `SMTP_PORT`: SMTP port.
- - `SMTP_USER`: SMTP account user.
- - `SMTP_PASSWORD`: SMTP account password.
- - `SMTP_PROTOCOL`: SMTP protocol to use.
+ - `SUGARCRM_SMTP_HOST`: SugarCRM SMTP host.
+ - `SUGARCRM_SMTP_PORT`: SugarCRM SMTP port.
+ - `SUGARCRM_SMTP_USER`: SugarCRM SMTP account user.
+ - `SUGARCRM_SMTP_PASSWORD`: SugarCRM SMTP account password.
+ - `SUGARCRM_SMTP_PROTOCOL`: SugarCRM SMTP protocol to use.
 
 This would be an example of SMTP configuration using a Gmail account:
 
@@ -209,18 +209,18 @@ This would be an example of SMTP configuration using a Gmail account:
     ports:
       - 80:80
     environment:
-      - SMTP_HOST=smtp.gmail.com
-      - SMTP_USER=your_email@gmail.com
-      - SMTP_PASSWORD=your_password
-      - SMTP_PROTOCOL=TLS
-      - SMTP_PORT=587
+      - SUGARCRM_SMTP_HOST=smtp.gmail.com
+      - SUGARCRM_SMTP_USER=your_email@gmail.com
+      - SUGARCRM_SMTP_PASSWORD=your_password
+      - SUGARCRM_SMTP_PROTOCOL=TLS
+      - SUGARCRM_SMTP_PORT=587
 ```
 
  * For manual execution:
 
 ```
- $ docker run -d -e SMTP_HOST=smtp.gmail.com -e SMTP_PROTOCOL=TLS -e SMTP_PORT=587 -e SMTP_USER=your_email@gmail.com -e SMTP_P\
-ASSWORD=your_password -p 80:80 --name sugarcrm -v /your/local/path/bitnami/sugarcrm:/bitnami/sugarcrm bitnami/sugarcrm
+ $ docker run -d -e SUGARCRM_SMTP_HOST=smtp.gmail.com -e SUGARCRM_SMTP_PROTOCOL=TLS -e SUGARCRM_SMTP_PORT=587 -e SUGARCRM_SMTP_USER=your_email@gmail.com -e \
+ SUGARCRM_SMTP_PASSWORD=your_password -p 80:80 --name sugarcrm -v /your/local/path/bitnami/sugarcrm:/bitnami/sugarcrm bitnami/sugarcrm
 ```
 
 # Backing up your application
