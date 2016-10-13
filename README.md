@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/bitnami/bitnami-docker-sugarcrm/tree/master.svg?style=shield)](https://circleci.com/gh/bitnami/bitnami-docker-sugarcrm/tree/master)
+[![Docker Hub Automated Build](http://container.checkforupdates.com/badges/bitnami/sugarcrm)](https://hub.docker.com/r/bitnami/sugarcrm/)
+
 # What is SugarCRM?
 
 > SugarCRM is a modern and flexible CRM for your entire team. With SugarCRM you can manage all your accounts and customers, connect with people across the company and start selling to your customer base. SugarCRM has integrations with scores of other services such as Google Apps, Pardot marketing automation, Box.com, and social sites such as LinkedIn, Twitter, and Facebook.
