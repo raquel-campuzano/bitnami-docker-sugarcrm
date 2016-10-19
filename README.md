@@ -136,9 +136,9 @@ Bitnami provides up-to-date versions of MariaDB and SugarCRM, including security
 
 1. Get the updated images:
 
-```
-$ docker pull bitnami/sugarcrm:latest
-```
+  ```
+  $ docker pull bitnami/sugarcrm:latest
+  ```
 
 2. Stop your container
 
@@ -232,14 +232,14 @@ To backup your application data follow these steps:
 
 1. Stop the running container:
 
-* For docker-compose: `$ docker-compose stop sugarcrm`
-* For manual execution: `$ docker stop sugarcrm`
+  * For docker-compose: `$ docker-compose stop sugarcrm`
+  * For manual execution: `$ docker stop sugarcrm`
 
 2. Copy the SugarCRM data folder in the host:
 
-```
-$ docker cp /your/local/path/bitnami:/bitnami/sugarcrm
-```
+  ```
+  $ docker cp /your/local/path/bitnami:/bitnami/sugarcrm
+  ```
 
 # Restoring a backup
 
