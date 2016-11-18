@@ -82,11 +82,13 @@ If you remove every container and volume all your data will be lost, and the nex
 
 If you are using docker-compose your data will be persistent as long as you don't remove `mariadb_data`, `sugarcrm_data` and `apache_data` volumes. 
 
+To avoid inadvertent removal of these volumes you can [mount host directories as data volumes](https://docs.docker.com/engine/tutorials/dockervolumes/). Alternatively you can make use of volume plugins to host the volume data.
+
 > **Note!** If you have already started using your application, follow the steps on [backing](#backing-up-your-application) up to pull the data from your running container down to your host.
 
-### Mount persistent folders in the host using docker-compose
+### Mount host directories as data volumes with Docker Compose
 
-This requires a slight modification from the template previously shown:
+This requires a minor change to the `docker-compose.yml` template previously shown:
 
 ```
 version: '2'
