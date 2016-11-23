@@ -21,7 +21,7 @@ Running SugarCRM with a database server is the recommended way. You can either u
 
 This is the recommended way to run SugarCRM. You can use the following docker compose template:
 
-```
+```yaml
 version: '2'
 
 services:
@@ -56,13 +56,13 @@ If you want to run the application manually instead of using docker-compose, the
 
 1. Create a new network for the application and the database:
 
-  ```
+  ```bash
   $ docker network create sugarcrm_network
   ```
 
 2. Start a MariaDB database in the network generated:
 
-  ```
+  ```bash
    $ docker run -d --name mariadb --net=sugarcrm_network bitnami/mariadb
   ```
 
@@ -70,7 +70,7 @@ If you want to run the application manually instead of using docker-compose, the
 
 3. Run the SugarCRM container:
 
-  ```
+  ```bash
   $ docker run -d -p 80:80 --name sugarcrm --net=sugarcrm_network bitnami/sugarcrm
   ```
 
@@ -90,7 +90,7 @@ To avoid inadvertent removal of these volumes you can [mount host directories as
 
 This requires a minor change to the `docker-compose.yml` template previously shown:
 
-```
+```yaml
 version: '2'
 
 services:
@@ -117,14 +117,14 @@ In this case you need to specify the directories to mount on the run command. Th
 
 1. Create a network (if it does not exist):
 
-  ```
+  ```bash
   $ docker network create sugarcrm-tier
   ```
 
 2. Create a MariaDB container with host volume:
 
-  ```
-  $$ docker run -d --name mariadb \
+  ```bash
+  $ docker run -d --name mariadb \
     --net sugarcrm-tier \
     --volume /path/to/mariadb-persistence:/bitnami/mariadb \
     bitnami/mariadb:latest
@@ -133,7 +133,7 @@ In this case you need to specify the directories to mount on the run command. Th
 
 3. Create the SugarCRM container with host volumes:
 
-  ```
+  ```bash
   $ docker run -d --name sugarcrm -p 80:80 -p 443:443 \
     --net sugarcrm-tier \
     --volume /path/to/sugarcrm-persistence:/bitnami/sugarcrm \
@@ -148,7 +148,7 @@ Bitnami provides up-to-date versions of MariaDB and SugarCRM, including security
 
 1. Get the updated images:
 
-  ```
+  ```bash
   $ docker pull bitnami/sugarcrm:latest
   ```
 
@@ -175,7 +175,7 @@ Bitnami provides up-to-date versions of MariaDB and SugarCRM, including security
 
  * For docker-compose add the variable name and value under the application section:
 
-```
+```yaml
 application:
   image: bitnami/sugarcrm:latest
   ports:
@@ -188,7 +188,7 @@ application:
 
  * For manual execution add a `-e` option with each variable and value:
 
-```
+```bash
  $ docker run -d -e SUGARCRM_PASSWORD=my_password -p 80:80 --name sugarcrm -v /your/local/path/bitnami/sugarcrm:/bitnami/sugarcrm --net=sugarcrm_network bitnami/sugarcrm
 ```
 
@@ -218,7 +218,7 @@ This would be an example of SMTP configuration using a Gmail account:
 
  * docker-compose:
 
-```
+```yaml
   application:
     image: bitnami/sugarcrm:latest
     ports:
@@ -233,7 +233,7 @@ This would be an example of SMTP configuration using a Gmail account:
 
  * For manual execution:
 
-```
+```bash
  $ docker run -d -e SUGARCRM_SMTP_HOST=smtp.gmail.com -e SUGARCRM_SMTP_PROTOCOL=TLS -e SUGARCRM_SMTP_PORT=587 -e SUGARCRM_SMTP_USER=your_email@gmail.com -e \
  SUGARCRM_SMTP_PASSWORD=your_password -p 80:80 --name sugarcrm -v /your/local/path/bitnami/sugarcrm:/bitnami/sugarcrm bitnami/sugarcrm
 ```
@@ -249,7 +249,7 @@ To backup your application data follow these steps:
 
 2. Copy the SugarCRM data folder in the host:
 
-  ```
+  ```bash
   $ docker cp /your/local/path/bitnami:/bitnami/sugarcrm
   ```
 
